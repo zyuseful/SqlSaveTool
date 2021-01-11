@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper	namespace="com.zzmxtd.sqltool.dao.mapper.ZSqlTabMapper">
+
+    <insert id="saveZSqlTabItem" parameterType="com.zzmxtd.sqltool.dao.beans.ZSqlTab">
+        insert into tab_zsql values (
+                                        #{zSqlTab.id},
+                                        #{zSqlTab.projectName},
+                                        #{zSqlTab.projectFunction},
+                                        #{zSqlTab.name},
+                                        #{zSqlTab.enName},
+                                        #{zSqlTab.type},
+                                        #{zSqlTab.dependence},
+                                        #{zSqlTab.parentId},
+                                        #{zSqlTab.descripe},
+
+                                        ${zSqlTab.sql},
+
+                                        #{zSqlTab.descripe},
+                                        #{zSqlTab.hierarchy},
+                                        #{zSqlTab.upTime}
+                                    )
+    </insert>
+
+    <update id="updateZSqlTabItem" parameterType="com.zzmxtd.sqltool.dao.beans.ZSqlTab">
+        update tab_zsql
+        <set >
+            project_function = #{zSqlTab.projectFunction},
+            project_name = #{zSqlTab.projectName},
+            name = #{zSqlTab.name},
+            en_name = #{zSqlTab.enName},
+            type = #{zSqlTab.type},
+            dependence = #{zSqlTab.dependence},
+            parent_id = #{zSqlTab.parentId},
+            hierarchy = #{zSqlTab.hierarchy},
+            <if test="zSqlTab.descripe != null and zSqlTab.descripe !=''">
+                descripe = E${zSqlTab.descripe},
+            </if>
+            <if test="zSqlTab.sql != null and zSqlTab.sql !=''">
+                sql = E${zSqlTab.sql},
+            </if>
+            <if test="zSqlTab.remarks != null and zSqlTab.remarks !=''">
+                remarks = E${zSqlTab.remarks},
+            </if>
+                uptime = #{zSqlTab.upTime}
+        </set>
+        where id = #{zSqlTab.id}
+    </update>
+</mapper>

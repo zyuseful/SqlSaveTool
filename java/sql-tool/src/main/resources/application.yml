@@ -1,0 +1,19 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://10.1.102.111:5432/sjzt
+    url: jdbc:postgresql://base:5432/sjzt
+    username: sjzt
+    password: sjzt@123
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mybatis/*.xml
+  #枚举扫描
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
