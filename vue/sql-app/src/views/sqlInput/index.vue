@@ -47,6 +47,9 @@
             <el-form-item label="id">
               <el-input size="small" v-model="leftEjectDrawer.leftSearch.id" style="width: 100px"></el-input>
             </el-form-item>
+            <el-form-item label="parent_id">
+              <el-input size="small" v-model="leftEjectDrawer.leftSearch.parentId" style="width: 100px"></el-input>
+            </el-form-item>
             <el-form-item label="名称">
               <el-input size="small" v-model="leftEjectDrawer.leftSearch.name" style="width: 100px"></el-input>
             </el-form-item>

@@ -41,6 +41,9 @@ public class ZSqlTabService extends ServiceImpl<ZSqlTabMapper, ZSqlTab> implemen
             //id
             String id = zSqlTab.getId();
             columnAppendToStr(sb,null,"id"," like '%",id,"%' and ");
+            //parentId
+            String parentId = zSqlTab.getParentId();
+            columnAppendToStr(sb,null,"parent_id"," like '%",parentId,"%' and ");
             //name
             String name = zSqlTab.getName();
             columnAppendToStr(sb,null,"name"," like '%",name,"%' and ");
