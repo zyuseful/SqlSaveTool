@@ -50,10 +50,15 @@ public class ZSqlTabService extends ServiceImpl<ZSqlTabMapper, ZSqlTab> implemen
             //enName
             String enName = zSqlTab.getEnName();
             columnAppendToStr(sb,null,"en_name"," like '%",enName,"%' and ");
+
             String type = zSqlTab.getType();
             columnAppendToStr(sb,null,"type"," like '%",type,"%' and ");
+
             String sql = zSqlTab.getSql();
             columnAppendToStr(sb,null,"sql"," like '%",sql,"%' and ");
+
+            String descripe = zSqlTab.getDescripe();
+            columnAppendToStr(sb,null,"descripe"," like '%",descripe,"%' and ");
 
             String sqlStr = sb.toString();
             sb.setLength(0);
